@@ -1,12 +1,15 @@
 import React from 'react';
-import { countries } from '../countriesData';
 import Option from './Option';
 
-export default function OptionsDropdown() {
+export default function OptionsDropdown(props) {
   return (
-    <select>
-      {countries.map((country) => (
-        <Option country={country.label} />
+    <select onChange={(e) => props.onChange(e)}>
+      {props.countries.map((country) => (
+        <Option
+          key={country.label}
+          code={country.code}
+          country={country.label}
+        />
       ))}
     </select>
   );
