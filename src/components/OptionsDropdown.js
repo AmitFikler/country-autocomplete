@@ -3,7 +3,7 @@ import Option from './Option';
 
 export default function OptionsDropdown(props) {
   return (
-    <select onChange={(e) => props.onChange(e)}>
+    <ul onClick={(e) => props.onClick(e)}>
       {props.countries.map((country) => (
         <Option
           key={country.label}
@@ -11,6 +11,6 @@ export default function OptionsDropdown(props) {
           country={country.label}
         />
       ))}
-    </select>
+    </ul>
   );
 }
